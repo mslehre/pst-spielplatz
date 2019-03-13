@@ -1,2 +1,3 @@
 do: do.cc
-	g++ do.cc -o do
+	g++ do.cc -g -ggdb -o do
+
