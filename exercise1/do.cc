@@ -60,7 +60,7 @@ void processArgs(int argc, char **argv){
 	    break;
 	case 'a':
 	    if (optarg){
-		numthreads = strtoul(optarg,nullptr,20);
+		numthreads = strtoul(optarg,nullptr,10);
 	    } 
 	    break;
 
