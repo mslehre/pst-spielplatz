@@ -11,12 +11,14 @@ std::string greeting = "";
 double score;
 int digit_optind = 0;
 int c;
+std::string name;
     
 void printHelp(){
     cout << "Options:" << endl
 	 << "\t--brief              Output less information" << endl
 	 << "\t--greeting <string>  A greeting string" << endl
-	 << "\t--score <number>     Set the score" << endl;
+	 << "\t--score <number>     Set the score" << endl
+	 << "\t--name <string>" << endl;
 }
 
 void processArgs(int argc, char **argv){
@@ -26,6 +28,7 @@ void processArgs(int argc, char **argv){
             {"brief",    no_argument,       nullptr, 'y' },
             {"greeting", optional_argument, nullptr, 'z' },
             {"score",    optional_argument, nullptr, 's' },
+            {"name",    optional_argument, nullptr, 'n' },
             {nullptr,          0,           nullptr,  0 }
         };
 
@@ -53,6 +56,11 @@ void processArgs(int argc, char **argv){
 		printHelp();
 	    }
 	    break;
+	case 'n':
+	    if (optarg){
+		name = optarg;
+            }
+	    break;
 
 	case '?': // unrecognized option
 	default:
@@ -71,6 +79,7 @@ int main (int argc, char **argv) {
     }
     cout << "greeting is: " << greeting << endl;
     cout << "score is " << score << endl;
+    cout << "name is " << name << endl;
 
     return 0;
 }
