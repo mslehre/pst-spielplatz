@@ -31,7 +31,7 @@ void processArgs(int argc, char **argv){
             {"brief",    no_argument,       nullptr, 'y' },
             {"greeting", optional_argument, nullptr, 'z' },
             {"score",    optional_argument, nullptr, 's' },
-            {"threshold", required_argument, nullptr, 'c' },
+            {"threshold", optional_argument, nullptr, 'c' },
             {"name",    optional_argument, nullptr, 'n' },
             {nullptr,          0,           nullptr,  0 }
         };
