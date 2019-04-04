@@ -57,10 +57,10 @@ void processArgs(int argc, char **argv){
 	    }
 	    break;
 	case 'n':
-		if (optarg){
+	    if (optarg){
 		name = optarg;
-		}
-		break;
+            }
+	    break;
 
 	case '?': // unrecognized option
 	default:
