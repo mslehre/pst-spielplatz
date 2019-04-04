@@ -1,3 +1,3 @@
 do: do.cc
-	g++ do.cc -g -ggdb -o do
+	g++ do.cc -std=c++11 -g -ggdb -o do
 
