@@ -13,6 +13,7 @@ double score;
 double threshold;
 int digit_optind = 0;
 int c;
+std::string name;
     
 void printHelp(){
     cout << "Options:" << endl
@@ -20,6 +21,7 @@ void printHelp(){
 	 << "\t--greeting <string>  A greeting string" << endl
 	 << "\t--score <number>     Set the score" << endl
 	 << "\t--threshold <double> Set threshold" << endl;
+	 << "\t--name <string>" << endl;
 }
 
 void processArgs(int argc, char **argv){
@@ -29,7 +31,8 @@ void processArgs(int argc, char **argv){
             {"brief",    no_argument,       nullptr, 'y' },
             {"greeting", optional_argument, nullptr, 'z' },
             {"score",    optional_argument, nullptr, 's' },
-		  {"threshold", required_argument, nullptr, 'c' },
+            {"threshold", required_argument, nullptr, 'c' },
+            {"name",    optional_argument, nullptr, 'n' },
             {nullptr,          0,           nullptr,  0 }
         };
 
@@ -56,6 +59,11 @@ void processArgs(int argc, char **argv){
 		cerr << "Option score specified without value." << endl;
 		printHelp();
 	    }
+	    break;
+	case 'n':
+	    if (optarg){
+		name = optarg;
+            }
 	    break;
 
 	case 'c':
@@ -85,6 +93,7 @@ int main (int argc, char **argv) {
     cout << "greeting is: " << greeting << endl;
     cout << "score is " << score << endl;
     cout << "threshold is " << threshold <<endl;
+    cout << "name is " << name << endl;
 
     return 0;
 }
