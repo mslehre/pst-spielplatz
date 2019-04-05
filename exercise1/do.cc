@@ -1,6 +1,7 @@
 #include <iostream>
 #include <getopt.h>
 #include <string>
+#include <stdlib.h>
 
 using std::cout;
 using std::endl;
@@ -9,6 +10,7 @@ using std::cerr;
 bool brief = 0;
 std::string greeting = "";
 double score;
+double threshold;
 int digit_optind = 0;
 int c;
 std::string name;
@@ -18,6 +20,7 @@ void printHelp(){
 	 << "\t--brief              Output less information" << endl
 	 << "\t--greeting <string>  A greeting string" << endl
 	 << "\t--score <number>     Set the score" << endl
+	 << "\t--threshold <double> Set threshold" << endl
 	 << "\t--name <string>" << endl;
 }
 
@@ -28,6 +31,7 @@ void processArgs(int argc, char **argv){
             {"brief",    no_argument,       nullptr, 'y' },
             {"greeting", optional_argument, nullptr, 'z' },
             {"score",    optional_argument, nullptr, 's' },
+            {"threshold", optional_argument, nullptr, 'c' },
             {"name",    optional_argument, nullptr, 'n' },
             {nullptr,          0,           nullptr,  0 }
         };
@@ -62,6 +66,15 @@ void processArgs(int argc, char **argv){
             }
 	    break;
 
+	case 'c':
+	    if (optarg){
+		threshold=atof(optarg);
+	    } else {
+		cerr << "Option threshold specified without value." << endl;
+		printHelp();
+	    }
+	    break;
+
 	case '?': // unrecognized option
 	default:
 	    printHelp();
@@ -79,6 +92,7 @@ int main (int argc, char **argv) {
     }
     cout << "greeting is: " << greeting << endl;
     cout << "score is " << score << endl;
+    cout << "threshold is " << threshold <<endl;
     cout << "name is " << name << endl;
 
     return 0;
