@@ -20,7 +20,7 @@ void printHelp(){
 	 << "\t--brief              Output less information" << endl
 	 << "\t--greeting <string>  A greeting string" << endl
 	 << "\t--score <number>     Set the score" << endl
-	 << "\t--threshold <double> Set threshold" << endl;
+	 << "\t--threshold <double> Set threshold" << endl
 	 << "\t--name <string>" << endl;
 }
 
