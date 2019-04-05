@@ -69,11 +69,11 @@ void processArgs(int argc, char **argv){
 	case 'c':
 	    if (optarg){
 		threshold=atof(optarg);
-		} else {
+	    } else {
 		cerr << "Option threshold specified without value." << endl;
 		printHelp();
 	    }
-		break;
+	    break;
 
 	case '?': // unrecognized option
 	default:
