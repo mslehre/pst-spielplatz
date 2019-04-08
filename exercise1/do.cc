@@ -10,17 +10,18 @@ using std::cerr;
 bool brief = 0;
 std::string greeting = "";
 double score;
+double threshold;
 int digit_optind = 0;
 int c;
-unsigned int numthreads;
-
+std::string name;
     
 void printHelp(){
     cout << "Options:" << endl
 	 << "\t--brief              Output less information" << endl
 	 << "\t--greeting <string>  A greeting string" << endl
 	 << "\t--score <number>     Set the score" << endl
-	 << "\t--numthreads <unsigned int>	Set numthreads" << endl;
+	 << "\t--threshold <double> Set threshold" << endl
+	 << "\t--name <string>" << endl;
 }
 
 void processArgs(int argc, char **argv){
@@ -30,7 +31,8 @@ void processArgs(int argc, char **argv){
             {"brief",    no_argument,       nullptr, 'y' },
             {"greeting", optional_argument, nullptr, 'z' },
             {"score",    optional_argument, nullptr, 's' },
-	    {"numthreads", required_argument, nullptr, 'a'},
+            {"threshold", optional_argument, nullptr, 'c' },
+            {"name",    optional_argument, nullptr, 'n' },
             {nullptr,          0,           nullptr,  0 }
         };
 
@@ -58,10 +60,22 @@ void processArgs(int argc, char **argv){
 		printHelp();
 	    }
 	    break;
-	case 'a':
+	case 'n':
 	    if (optarg){
-		numthreads = strtoul(optarg,nullptr,10);
-	    } 
+		name = optarg;
+            }
+	    break;
+
+	case 'c':
+	    if (optarg){
+<<<<<<< HEAD
+=======
+		threshold=atof(optarg);
+	    } else {
+		cerr << "Option threshold specified without value." << endl;
+		printHelp();
+	    }
+>>>>>>> origin/master
 	    break;
 
 	case '?': // unrecognized option
@@ -81,7 +95,8 @@ int main (int argc, char **argv) {
     }
     cout << "greeting is: " << greeting << endl;
     cout << "score is " << score << endl;
-    cout << "numthreads is " << numthreads << endl;
+    cout << "threshold is " << threshold <<endl;
+    cout << "name is " << name << endl;
 
     return 0;
 }
