@@ -41,10 +41,14 @@ void processArgs(int argc, char **argv){
             {"threshold", optional_argument, nullptr, 'c' },
             {"name",    optional_argument, nullptr, 'n' },
 <<<<<<< HEAD
+<<<<<<< HEAD
 			{"x_offset", optional_argument, nullptr, 'f'},
 =======
             {"numthreads",    required_argument, nullptr, 't' },
 >>>>>>> origin/master
+=======
+            {"x_offset", optional_argument, nullptr, 'f'},
+>>>>>>> 4491a08e1389daf016598d0dbfce770ac7724eb8
             {nullptr,          0,           nullptr,  0 }
         };
 
@@ -119,8 +123,8 @@ int main (int argc, char **argv) {
     cout << "score is " << score << endl;
     cout << "threshold is " << threshold <<endl;
     cout << "name is " << name << endl;
-	cout << "x_offset is "<< x_offset << endl;
     cout << "numthreads is " << numthreads << endl;
+    cout << "x_offset is "<< x_offset << endl;
 
     return 0;
 }
