@@ -29,7 +29,7 @@ void processArgs(int argc, char **argv){
             {"brief",    no_argument,       nullptr, 'y' },
             {"greeting", optional_argument, nullptr, 'z' },
             {"score",    optional_argument, nullptr, 's' },
-			{"y_offset", optional_argument, nullptr, 'a' },
+		    {"y_offset", optional_argument, nullptr, 'a' },
             {nullptr,          0,           nullptr,  0 }
         };
 
@@ -84,7 +84,7 @@ int main (int argc, char **argv) {
     }
     cout << "greeting is: " << greeting << endl;
     cout << "score is " << score << endl;
-	cout << "y_offset is " << y_offset << endl;
+    cout << "y_offset is " << y_offset << endl;
 
     return 0;
 }
