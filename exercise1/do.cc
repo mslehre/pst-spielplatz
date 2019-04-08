@@ -14,6 +14,7 @@ double threshold;
 int digit_optind = 0;
 int c;
 std::string name;
+unsigned int numthreads;
     
 void printHelp(){
     cout << "Options:" << endl
@@ -21,6 +22,7 @@ void printHelp(){
 	 << "\t--greeting <string>  A greeting string" << endl
 	 << "\t--score <number>     Set the score" << endl
 	 << "\t--threshold <double> Set threshold" << endl
+	 << "\t--numthreads <unsigned int> Set numthreads" << endl
 	 << "\t--name <string>" << endl;
 }
 
@@ -33,6 +35,7 @@ void processArgs(int argc, char **argv){
             {"score",    optional_argument, nullptr, 's' },
             {"threshold", optional_argument, nullptr, 'c' },
             {"name",    optional_argument, nullptr, 'n' },
+            {"numthreads",    required_argument, nullptr, 't' },
             {nullptr,          0,           nullptr,  0 }
         };
 
@@ -65,13 +68,17 @@ void processArgs(int argc, char **argv){
 		name = optarg;
             }
 	    break;
-
 	case 'c':
 	    if (optarg){
 		threshold=atof(optarg);
 	    } else {
 		cerr << "Option threshold specified without value." << endl;
 		printHelp();
+	    }
+	    break;
+	case 't':
+	    if (optarg){
+		numthreads=strtoul(optarg,nullptr,10);
 	    }
 	    break;
 
@@ -94,6 +101,7 @@ int main (int argc, char **argv) {
     cout << "score is " << score << endl;
     cout << "threshold is " << threshold <<endl;
     cout << "name is " << name << endl;
+    cout << "numthreads is " << numthreads << endl;
 
     return 0;
 }
