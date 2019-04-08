@@ -29,7 +29,7 @@ void processArgs(int argc, char **argv){
             {"brief",    no_argument,       nullptr, 'y' },
             {"greeting", optional_argument, nullptr, 'z' },
             {"score",    optional_argument, nullptr, 's' },
-		    {"y_offset", optional_argument, nullptr, 'a' },
+            {"y_offset", optional_argument, nullptr, 'a' },
             {nullptr,          0,           nullptr,  0 }
         };
 
