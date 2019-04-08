@@ -35,7 +35,7 @@ void processArgs(int argc, char **argv){
             {"score",    optional_argument, nullptr, 's' },
             {"threshold", optional_argument, nullptr, 'c' },
             {"name",    optional_argument, nullptr, 'n' },
-			{"x_offset", optional_argument, nullptr, 'f'},
+            {"x_offset", optional_argument, nullptr, 'f'},
             {nullptr,          0,           nullptr,  0 }
         };
 
@@ -106,6 +106,6 @@ int main (int argc, char **argv) {
     cout << "score is " << score << endl;
     cout << "threshold is " << threshold <<endl;
     cout << "name is " << name << endl;
-	cout << "x_offset is "<< x_offset << endl;
+    cout << "x_offset is "<< x_offset << endl;
     return 0;
 }
