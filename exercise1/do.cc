@@ -79,13 +79,13 @@ void processArgs(int argc, char **argv){
 	    break;
 
 	case 'f':
-		if(optarg){
+	    if(optarg){
 		x_offset = atof(optarg);
-		} else {
+	    } else {
 		cerr << "x-offset specified without value" <<endl;
 		printHelp();
-		}
-		break;
+	    }
+	    break;
 
 	case '?': // unrecognized option
 	default:
