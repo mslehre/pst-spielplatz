@@ -23,11 +23,8 @@ void printHelp(){
 	 << "\t--greeting <string>  A greeting string" << endl
 	 << "\t--score <number>     Set the score" << endl
 	 << "\t--threshold <double> Set threshold" << endl
-<<<<<<< HEAD
 	 << "\t--x_offset <number>" << endl
-=======
 	 << "\t--numthreads <unsigned int> Set numthreads" << endl
->>>>>>> origin/master
 	 << "\t--name <string>" << endl;
 }
 
@@ -40,15 +37,8 @@ void processArgs(int argc, char **argv){
             {"score",    optional_argument, nullptr, 's' },
             {"threshold", optional_argument, nullptr, 'c' },
             {"name",    optional_argument, nullptr, 'n' },
-<<<<<<< HEAD
-<<<<<<< HEAD
-			{"x_offset", optional_argument, nullptr, 'f'},
-=======
             {"numthreads",    required_argument, nullptr, 't' },
->>>>>>> origin/master
-=======
             {"x_offset", optional_argument, nullptr, 'f'},
->>>>>>> 4491a08e1389daf016598d0dbfce770ac7724eb8
             {nullptr,          0,           nullptr,  0 }
         };
 
