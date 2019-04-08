@@ -13,6 +13,7 @@ double score;
 double threshold;
 int digit_optind = 0;
 int c;
+int x_offset;
 std::string name;
     
 void printHelp(){
@@ -21,6 +22,7 @@ void printHelp(){
 	 << "\t--greeting <string>  A greeting string" << endl
 	 << "\t--score <number>     Set the score" << endl
 	 << "\t--threshold <double> Set threshold" << endl
+	 << "\t--x_offset <number>" << endl
 	 << "\t--name <string>" << endl;
 }
 
@@ -33,6 +35,7 @@ void processArgs(int argc, char **argv){
             {"score",    optional_argument, nullptr, 's' },
             {"threshold", optional_argument, nullptr, 'c' },
             {"name",    optional_argument, nullptr, 'n' },
+			{"x_offset", optional_argument, nullptr, 'f'},
             {nullptr,          0,           nullptr,  0 }
         };
 
@@ -75,6 +78,15 @@ void processArgs(int argc, char **argv){
 	    }
 	    break;
 
+	case 'f':
+		if(optarg){
+		x_offset = atof(optarg);
+		} else {
+		cerr << "x-offset specified without value" <<endl;
+		printHelp();
+		}
+		break;
+
 	case '?': // unrecognized option
 	default:
 	    printHelp();
@@ -94,6 +106,6 @@ int main (int argc, char **argv) {
     cout << "score is " << score << endl;
     cout << "threshold is " << threshold <<endl;
     cout << "name is " << name << endl;
-
+	cout << "x_offset is "<< x_offset << endl;
     return 0;
 }
