@@ -1,5 +1,5 @@
 # 1) Account
-Create an account on [GitHub](http://github.com) and email the account name to `{mario.stanke,felix.becker}@uni-greifswald.de` (both).
+Create an account on [GitHub](http://github.com) and email the account name to `{mario.stanke,irrgang}@uni-greifswald.de` (both).
 
 # 2) Basic git usage
 Create your own repository, e.g. with name `ownProject`, and perform steps 1) - 7) of
