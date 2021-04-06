@@ -20,11 +20,11 @@ Add a new command-line parameter to `exercise1/do.cc` as assigned to you from th
 
 | key | parameter                           |
 |-----|:------------------------------------|
-| a   | an unsigned integer `numthreads`    |
-| b   | a string `name`                     |
-| c   | a double `threshold`                |
-| d   | an int `x-offset`                   |
-| e   | an int `y-offset`                   |
+| pet | an unsigned integer `numthreads`    |
+| wil | a string `name`                     |
+| ric | a double `threshold`                |
+| dan | an int `x-offset`                   |
+| jul | an int `y-offset`                   |
 | f   | a boolean flag `verbose`            |
 | g   | a boolean flag `help`               |
 | h   | a character `sex`                   |
@@ -32,7 +32,7 @@ Add a new command-line parameter to `exercise1/do.cc` as assigned to you from th
 
 For this, follow the following steps:
  1. Pull the latest commit from `master` with `git pull`.
- 2. create a branch `feature/x` where `x` is your one-letter key from above list (`git branch`, `git checkout`, `git push`).
+ 2. create a branch `feature/x` where `x` is your key from above list (`git branch`, `git checkout`, `git push`).
  3. Implement above feature in the same style and let `main` print out the result of
     the passed argument. Test it.
  4. Commit your changes locally (`git add`, `git status`, `git commit`).
