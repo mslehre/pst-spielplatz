@@ -18,16 +18,14 @@ git clone https://github.com/mslehre/pst19-spielplatz.git
 ```
 Add a new command-line parameter to `exercise1/do.cc` as assigned to you from the following table
 
-| key | parameter                           |
-|-----|:------------------------------------|
-| pet | an unsigned integer `numthreads`    |
-| wil | a string `name`                     |
-| ric | a double `threshold`                |
-| dan | an int `x-offset`                   |
-| jul | an int `y-offset`                   |
-| f   | a boolean flag `verbose`            |
-| g   | a boolean flag `help`               |
-| h   | a character `sex`                   |
+| name | key | parameter                            |
+|----- | --- | :------------------------------------|
+| pet  | a   |  an unsigned integer `numthreads`    |
+| wil  | b   |  a string `name`                     |
+| ric  | c   |  a double `threshold`                |
+| dan  | d   |  an int `x-offset`                   |
+| jul  | e   |  an int `y-offset`                   |
+
 
 
 For this, follow the following steps:
