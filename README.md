@@ -1,3 +1,3 @@
-# Spielplatz für Praktikum Softwaretechnik 2019
+# Spielplatz für Praktikum Softwaretechnik
 
 ## [Aufgabe 1 (Git)](exercise1/exercise1.md)
