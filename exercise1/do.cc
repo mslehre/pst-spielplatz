@@ -70,13 +70,13 @@ void processArgs(int argc, char **argv){
 	    break;
 
 	case 'd':
-        if (optarg){
-        x_offset = atoi(optarg);
-        } else {
-        cerr << "Option x-offset specified without value." << endl;
-        printHelp();
-        }
-        break;
+	    if (optarg){
+	        x_offset = atoi(optarg);
+	    } else {
+	        cerr << "Option x-offset specified without value." << endl;
+	        printHelp();
+	    }
+	    break;
 
 	case '?': // unrecognized option
 	default:
