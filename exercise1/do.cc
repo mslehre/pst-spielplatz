@@ -62,7 +62,7 @@ void processArgs(int argc, char **argv){
 
 	case 'a':
 	    if (optarg){
-		numthreads = strtoul(optarg,nullptr,10);
+		numthreads = strtoul(optarg, nullptr, 10);
 	    } else {
 		cerr << "Option numthreads specified without value." << endl;
 		printHelp();
