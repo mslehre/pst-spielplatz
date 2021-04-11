@@ -12,13 +12,15 @@ double score;
 int digit_optind = 0;
 int c;
 double threshold;
-    
+int x_offset;
+
 void printHelp(){
     cout << "Options:" << endl
 	 << "\t--brief              Output less information" << endl
 	 << "\t--greeting <string>  A greeting string" << endl
 	 << "\t--score <number>     Set the score" << endl
-	 << "\t--threshold <number>     Set the threshold" << endl;
+	 << "\t--threshold <number>     Set the threshold" << endl
+	 << "\t--x-offset <number>  Set the x-offset" << endl;
 }
 
 void processArgs(int argc, char **argv){
@@ -29,6 +31,7 @@ void processArgs(int argc, char **argv){
             {"greeting", optional_argument, nullptr, 'z' },
             {"score",    optional_argument, nullptr, 's' },
             {"threshold",    optional_argument, nullptr, 'c' },
+            {"x-offset", optional_argument, nullptr, 'd' },
             {nullptr,          0,           nullptr,  0 }
         };
 
@@ -36,12 +39,12 @@ void processArgs(int argc, char **argv){
 	if (c == -1){
 	    break;
 	}
-	
+
 	switch (c) {
 	case 'y':
 	    brief = true;
 	    break;
-	    
+
         case 'z':
 	    if (optarg){
 		greeting = optarg;
@@ -66,6 +69,15 @@ void processArgs(int argc, char **argv){
 	    }
 	    break;
 
+	case 'd':
+        if (optarg){
+        x_offset = atoi(optarg);
+        } else {
+        cerr << "Option x-offset specified without value." << endl;
+        printHelp();
+        }
+        break;
+
 	case '?': // unrecognized option
 	default:
 	    printHelp();
@@ -84,6 +96,7 @@ int main (int argc, char **argv) {
     cout << "greeting is: " << greeting << endl;
     cout << "score is " << score << endl;
     cout << "threshold is " << threshold << endl;
+    cout << "x-offset is " << x_offset << endl;
 
     return 0;
 }
