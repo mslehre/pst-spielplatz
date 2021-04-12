@@ -15,6 +15,7 @@ int c;
 unsigned int numthreads;
 double threshold;
 int x_offset;
+int y_offset;
 
 void printHelp(){
     cout << "Options:" << endl
@@ -24,7 +25,8 @@ void printHelp(){
 	 << "\t--name <string>     Set the name" << endl
 	 << "\t--numthreads <unsigned integer>  Set numthreads" << endl
 	 << "\t--threshold <number>     Set the threshold" << endl
-	 << "\t--x-offset <number>  Set the x-offset" << endl;
+	 << "\t--x-offset <number>  Set the x-offset" << endl
+	 << "\t--y-offset <number>	Set the y-offset" << endl;
 }
 
 void processArgs(int argc, char **argv){
@@ -38,6 +40,7 @@ void processArgs(int argc, char **argv){
             {"threshold",    optional_argument, nullptr, 'c' },
             {"name", optional_argument, nullptr, 'w'  },
             {"x-offset", optional_argument, nullptr, 'd' },
+			{"y-offset", optional_argument, nullptr, 'e'},
             {nullptr,          0,           nullptr,  0 }
         };
 
@@ -98,7 +101,15 @@ void processArgs(int argc, char **argv){
 	        printHelp();
 	    }
 	    break;
-
+	case 'e':
+		if (optarg){
+			y_offset = atoi(optarg);
+		} else {
+			cerr << "Option y-offset specified without value." << endl;
+			printHelp();
+		}
+		break;
+	
 	case '?': // unrecognized option
 	default:
 	    printHelp();
@@ -120,6 +131,7 @@ int main (int argc, char **argv) {
     cout << "threshold is " << threshold << endl;
     cout << "name is: " << name << endl;
     cout << "x-offset is " << x_offset << endl;
+	cout << "y-offset is " << y_offset << endl;
 
     return 0;
 }
