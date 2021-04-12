@@ -12,15 +12,19 @@ std::string name = "";
 double score;
 int digit_optind = 0;
 int c;
+unsigned int numthreads;
 double threshold;
-    
+int x_offset;
+
 void printHelp(){
     cout << "Options:" << endl
 	 << "\t--brief              Output less information" << endl
 	 << "\t--greeting <string>  A greeting string" << endl
 	 << "\t--score <number>     Set the score" << endl
+         << "\t--name <string>      Set the name" << endl
+	 << "\t--numthreads <unsigned integer>  Set numthreads" << endl
 	 << "\t--threshold <number>     Set the threshold" << endl
-         << "\t--name <string>      Set the name" << endl;
+	 << "\t--x-offset <number>  Set the x-offset" << endl;
 }
 
 void processArgs(int argc, char **argv){
@@ -30,8 +34,10 @@ void processArgs(int argc, char **argv){
             {"brief",    no_argument,       nullptr, 'y' },
             {"greeting", optional_argument, nullptr, 'z' },
             {"score",    optional_argument, nullptr, 's' },
+            {"numthreads",   optional_argument, nullptr, 'a' },
             {"threshold",    optional_argument, nullptr, 'c' },
             {"name", optional_argument, nullptr, 'w'  },
+            {"x-offset", optional_argument, nullptr, 'd' },
             {nullptr,          0,           nullptr,  0 }
         };
 
@@ -39,12 +45,12 @@ void processArgs(int argc, char **argv){
 	if (c == -1){
 	    break;
 	}
-	
+
 	switch (c) {
 	case 'y':
 	    brief = true;
 	    break;
-	    
+
         case 'z':
 	    if (optarg){
 		greeting = optarg;
@@ -66,12 +72,30 @@ void processArgs(int argc, char **argv){
 	    }
 	    break;
 
+	case 'a':
+	    if (optarg){
+		numthreads = strtoul(optarg, nullptr, 10);
+	    } else {
+		cerr << "Option numthreads specified without value." << endl;
+		printHelp();
+	    }
+	    break;
+
 	case 'c':
 	    if (optarg){
 		threshold = atof(optarg);
 	    } else {
 		cerr << "Option threshold specified without value." << endl;
 		printHelp();
+	    }
+	    break;
+
+	case 'd':
+	    if (optarg){
+	        x_offset = atoi(optarg);
+	    } else {
+	        cerr << "Option x-offset specified without value." << endl;
+	        printHelp();
 	    }
 	    break;
 
@@ -92,8 +116,10 @@ int main (int argc, char **argv) {
     }
     cout << "greeting is: " << greeting << endl;
     cout << "score is " << score << endl;
+    cout << "numthreads is " << numthreads << endl;
     cout << "threshold is " << threshold << endl;
     cout << "name is: " << name << endl;
+    cout << "x-offset is " << x_offset << endl;
 
     return 0;
 }
