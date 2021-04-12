@@ -8,6 +8,7 @@ using std::cerr;
 
 bool brief = 0;
 std::string greeting = "";
+std::string name = "";
 double score;
 int digit_optind = 0;
 int c;
@@ -20,6 +21,7 @@ void printHelp(){
 	 << "\t--brief              Output less information" << endl
 	 << "\t--greeting <string>  A greeting string" << endl
 	 << "\t--score <number>     Set the score" << endl
+	 << "\t--name <string>     Set the name" << endl
 	 << "\t--numthreads <unsigned integer>  Set numthreads" << endl
 	 << "\t--threshold <number>     Set the threshold" << endl
 	 << "\t--x-offset <number>  Set the x-offset" << endl;
@@ -34,6 +36,7 @@ void processArgs(int argc, char **argv){
             {"score",    optional_argument, nullptr, 's' },
             {"numthreads",   optional_argument, nullptr, 'a' },
             {"threshold",    optional_argument, nullptr, 'c' },
+            {"name", optional_argument, nullptr, 'w'  },
             {"x-offset", optional_argument, nullptr, 'd' },
             {nullptr,          0,           nullptr,  0 }
         };
@@ -52,6 +55,12 @@ void processArgs(int argc, char **argv){
 	    if (optarg){
 		greeting = optarg;
 	    }
+            break;
+
+	case 'w':
+            if (optarg){
+                name = optarg;
+            }
             break;
 
 	case 's':
@@ -109,6 +118,7 @@ int main (int argc, char **argv) {
     cout << "score is " << score << endl;
     cout << "numthreads is " << numthreads << endl;
     cout << "threshold is " << threshold << endl;
+    cout << "name is: " << name << endl;
     cout << "x-offset is " << x_offset << endl;
 
     return 0;
