@@ -21,7 +21,7 @@ void printHelp(){
 	 << "\t--brief              Output less information" << endl
 	 << "\t--greeting <string>  A greeting string" << endl
 	 << "\t--score <number>     Set the score" << endl
-   << "\t--name <string>      Set the name" << endl
+	 << "\t--name <string>     Set the name" << endl
 	 << "\t--numthreads <unsigned integer>  Set numthreads" << endl
 	 << "\t--threshold <number>     Set the threshold" << endl
 	 << "\t--x-offset <number>  Set the x-offset" << endl;
