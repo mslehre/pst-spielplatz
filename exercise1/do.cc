@@ -11,6 +11,7 @@ std::string greeting = "";
 double score;
 int digit_optind = 0;
 int c;
+unsigned int numthreads;
 double threshold;
 int x_offset;
 
@@ -19,6 +20,7 @@ void printHelp(){
 	 << "\t--brief              Output less information" << endl
 	 << "\t--greeting <string>  A greeting string" << endl
 	 << "\t--score <number>     Set the score" << endl
+	 << "\t--numthreads <unsigned integer>  Set numthreads" << endl
 	 << "\t--threshold <number>     Set the threshold" << endl
 	 << "\t--x-offset <number>  Set the x-offset" << endl;
 }
@@ -30,6 +32,7 @@ void processArgs(int argc, char **argv){
             {"brief",    no_argument,       nullptr, 'y' },
             {"greeting", optional_argument, nullptr, 'z' },
             {"score",    optional_argument, nullptr, 's' },
+            {"numthreads",   optional_argument, nullptr, 'a' },
             {"threshold",    optional_argument, nullptr, 'c' },
             {"x-offset", optional_argument, nullptr, 'd' },
             {nullptr,          0,           nullptr,  0 }
@@ -56,6 +59,15 @@ void processArgs(int argc, char **argv){
 		score = atof(optarg);
 	    } else {
 		cerr << "Option score specified without value." << endl;
+		printHelp();
+	    }
+	    break;
+
+	case 'a':
+	    if (optarg){
+		numthreads = strtoul(optarg, nullptr, 10);
+	    } else {
+		cerr << "Option numthreads specified without value." << endl;
 		printHelp();
 	    }
 	    break;
@@ -95,6 +107,7 @@ int main (int argc, char **argv) {
     }
     cout << "greeting is: " << greeting << endl;
     cout << "score is " << score << endl;
+    cout << "numthreads is " << numthreads << endl;
     cout << "threshold is " << threshold << endl;
     cout << "x-offset is " << x_offset << endl;
 
