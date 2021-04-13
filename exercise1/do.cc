@@ -40,7 +40,7 @@ void processArgs(int argc, char **argv){
             {"threshold",    optional_argument, nullptr, 'c' },
             {"name", optional_argument, nullptr, 'w'  },
             {"x-offset", optional_argument, nullptr, 'd' },
-			{"y-offset", optional_argument, nullptr, 'e'},
+            {"y-offset", optional_argument, nullptr, 'e'},
             {nullptr,          0,           nullptr,  0 }
         };
 
