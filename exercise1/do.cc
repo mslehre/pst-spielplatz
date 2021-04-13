@@ -101,14 +101,15 @@ void processArgs(int argc, char **argv){
 	        printHelp();
 	    }
 	    break;
+
 	case 'e':
-		if (optarg){
-			y_offset = atoi(optarg);
-		} else {
-			cerr << "Option y-offset specified without value." << endl;
-			printHelp();
-		}
-		break;
+	    if (optarg){
+	        y_offset = atoi(optarg);
+	    } else {
+	        cerr << "Option y-offset specified without value." << endl;
+	        printHelp();
+	    }
+	    break;
 	
 	case '?': // unrecognized option
 	default:
@@ -131,7 +132,7 @@ int main (int argc, char **argv) {
     cout << "threshold is " << threshold << endl;
     cout << "name is: " << name << endl;
     cout << "x-offset is " << x_offset << endl;
-	cout << "y-offset is " << y_offset << endl;
+    cout << "y-offset is " << y_offset << endl;
 
     return 0;
 }
